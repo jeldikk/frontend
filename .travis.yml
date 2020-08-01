@@ -1,0 +1,23 @@
+# Tell travis we need a copy of docker running
+
+language: generic
+sudo: required # sudo required to execute docker commands
+
+
+services:
+    - docker
+
+# all the things to be done before testing or building
+before_install:
+    - docker build -f Dockerfile.dev -t jk2/frontend .
+
+script:
+    - docker run -e CI=true jk2/frontend npm run test # actually this must be docker run jk2/frontend npm run test -- --coverage
+
+# Build our image using Dockerfile.dev
+
+
+# Tell Travis How to run our test suite
+
+
+# Tell travis how to deploy our code to AWS ( this is not yet)
