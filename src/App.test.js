@@ -13,7 +13,7 @@ test('renders learn react link', () => {
 test("some of the tests",()=>{
   const {getByText} = render(<App />);
   console.log(getByText);
-  const linkElement = getByText(/papa/i)
+  const linkElement = getByText(/ahaa/i)
   console.log(linkElement)
   const linkEle2 = getByText(/learn react/i);
 })
